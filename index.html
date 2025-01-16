@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honda Goldwing Trike 1800</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #444;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: url('https://example.com/honda-goldwing.jpg') no-repeat center center/cover;
+            color: #fff;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+        .hero a {
+            background: #e63946;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+        }
+        .section {
+            padding: 2rem;
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        footer a {
+            color: #e63946;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Honda Goldwing Trike 1800</h1>
+    </header>
+    <nav>
+        <a href="#about">O nas</a>
+        <a href="#specs">Specyfikacja</a>
+        <a href="#gallery">Galeria</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <section class="hero">
+        <h2>Komfort, Moc, Styl</h2>
+        <p>Honda Goldwing Trike 1800 – Twoja podróż marzeń.</p>
+        <a href="#contact">Umów się na jazdę próbną</a>
+    </section>
+    <section id="about" class="section">
+        <h2>O nas</h2>
+        <p>Oferujemy najwyższej jakości trójkołowce, które łączą nowoczesną technologię, niezrównany komfort i wyjątkowy styl.</p>
+    </section>
+    <section id="specs" class="section">
+        <h2>Specyfikacja Techniczna</h2>
+        <ul>
+            <li>Silnik: 1800cc</li>
+            <li>Moc: 124 KM</li>
+            <li>Pojemność zbiornika: 21 litrów</li>
+            <li>Zaawansowane systemy bezpieczeństwa</li>
+        </ul>
+    </section>
+    <section id="gallery" class="section">
+        <h2>Galeria</h2>
+        <div class="gallery">
+            <img src="https://example.com/photo1.jpg" alt="Honda Goldwing z boku">
+            <img src="https://example.com/photo2.jpg" alt="Honda Goldwing na trasie">
+            <img src="https://example.com/photo3.jpg" alt="Szczegóły pojazdu">
+        </div>
+    </section>
+    <section id="contact" class="section">
+        <h2>Kontakt</h2>
+        <form>
+            <label for="name">Imię i nazwisko:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Wiadomość:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <button type="submit">Wyślij</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 Honda Goldwing Trike 1800. Wszystkie prawa zastrzeżone. <a href="#">Polityka prywatności</a></p>
+    </footer>
+</body>
+</html>
