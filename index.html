@@ -10,70 +10,76 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            background-color: #fff;
         }
         header {
-            background: #333;
+            background: linear-gradient(90deg, #e63946, #6a0572);
             color: #fff;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             text-align: center;
+            position: relative;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
+        .language-selector {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .language-button {
+            background: transparent; /* Ustawia przezroczyste tło */
+    border: none; /* Usuwa ramkę przycisku */
+    padding: 0; /* Usuwa marginesy wewnętrzne */
+    cursor: pointer; /* Zmienia kursor na wskaźnik */
+}
+
+.language-button img {
+    width: 30px; /* Ustawia szerokość flagi */
+    height: auto; /* Automatycznie dopasowuje wysokość w proporcji do szerokości */
+}
         nav {
             display: flex;
             justify-content: center;
             background: #444;
-            padding: 0.5rem 0;
+            padding: 0.75rem 0;
         }
         nav a {
             color: #fff;
             text-decoration: none;
             margin: 0 1rem;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .hero {
-            background: url('https://example.com/honda-goldwing.jpg') no-repeat center center/cover;
-            color: #fff;
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .hero h2 {
-            font-size: 3rem;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 1.5rem;
-            margin: 1rem 0;
-        }
-        .hero a {
-            background: #e63946;
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
             border-radius: 5px;
         }
-        .section {
-            padding: 2rem;
-            text-align: center;
+        nav a:hover {
+            background: #e63946;
         }
-        .gallery {
+        .section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
+            gap: 1.5rem;
+            padding: 2rem;
+            margin: 1rem auto;
+            max-width: 1200px;
         }
-        .gallery img {
-            width: 100%;
-            height: auto;
+        .card {
+            background: #fff;
             border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #e63946;
         }
         footer {
             background: #333;
@@ -90,54 +96,143 @@
 </head>
 <body>
     <header>
-        <h1>Honda Goldwing Trike 1800</h1>
+        <h1 id="header-title">Honda Goldwing Trike 1800</h1>
+        <!-- Wybór języka -->
+        <div class="language-selector">
+            <button class="language-button" onclick="changeLanguage('pl')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_Poland.svg" alt="Polska" class="flag">
+            </button>
+            <button class="language-button" onclick="changeLanguage('en')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" alt="UK" class="flag">
+            </button>
+        </div>
     </header>
     <nav>
-        <a href="#about">O nas</a>
-        <a href="#specs">Specyfikacja</a>
-        <a href="#gallery">Galeria</a>
-        <a href="kontakt.html">Kontakt</a>
+        <a href="#about" id="nav-about">O nas</a>
+        <a href="#specs" id="nav-specs">Specyfikacja</a>
+        <a href="#gallery" id="nav-gallery">Galeria</a>
+        <a href="kontakt.html" id="nav-contact">Kontakt</a>
     </nav>
-    <section class="hero">
-        <h2>Komfort, Moc, Styl</h2>
-        <p>Honda Goldwing Trike 1800 – Twoja podróż marzeń.</p>
-        <a href="#contact">Umów się na jazdę próbną</a>
-    </section>
     <section id="about" class="section">
-        <h2>O nas</h2>
-        <p>Oferujemy najwyższej jakości trójkołowce, które łączą nowoczesną technologię, niezrównany komfort i wyjątkowy styl.</p>
+        <div class="card">
+            <h2 id="about-title">O mnie</h2>
+            <p id="about-text">Nazywam się Zenon i od lat z ogromną pasją zajmuję się rekonstrukcją oraz przywracaniem do życia legendarnych modeli Hond Goldwing Trike. Każdy projekt to dla mnie wyjątkowa podróż – od pierwszego etapu renowacji, aż po efekt końcowy, który zachwyca detalami i jakością wykonania.
+                Zapraszam do obejrzenia moich realizacji – znajdziesz tutaj galerię wyjątkowych maszyn, w które włożyłem całe serce i zaangażowanie. Każda z nich ma swoją niepowtarzalną historię i charakter, który czeka na odkrycie.
+                Jeśli któryś z modeli szczególnie Cię zainteresuje, zachęcam do kontaktu – chętnie opowiem więcej o projekcie i podzielę się swoją pasją do tych niezwykłych pojazdów..</p>
+        </div>
     </section>
     <section id="specs" class="section">
-        <h2>Specyfikacja Techniczna</h2>
-        <ul>
-            <li>Silnik: 1800cc</li>
-            <li>Moc: 124 KM</li>
-            <li>Pojemność zbiornika: 21 litrów</li>
-            <li>Zaawansowane systemy bezpieczeństwa</li>
-        </ul>
+        <div class="card">
+            <h2 id="specs-title">Specyfikacja Techniczna</h2>
+            <ul id="specs-list">
+                <li>Silnik: 1800cc</li>
+                <li>Moc: 124 KM</li>
+                <li>Pojemność zbiornika: 21 litrów</li>
+                <li>Zaawansowane systemy bezpieczeństwa</li>
+            </ul>
+        </div>
     </section>
     <section id="gallery" class="section">
-        <h2>Galeria</h2>
-        <div class="gallery">
+        <div class="card">
+            <h2 id="gallery-title">Galeria</h2>
             <img src="https://example.com/photo1.jpg" alt="Honda Goldwing z boku">
             <img src="https://example.com/photo2.jpg" alt="Honda Goldwing na trasie">
             <img src="https://example.com/photo3.jpg" alt="Szczegóły pojazdu">
         </div>
     </section>
     <section id="contact" class="section">
-        <h2>Kontakt</h2>
-        <form>
-            <label for="name">Imię i nazwisko:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">E-mail:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="message">Wiadomość:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
-            <button type="submit">Wyślij</button>
-        </form>
+        <div class="card">
+            <h2 id="contact-title">Kontakt</h2>
+            <form>
+                <label for="name" id="name-label">Imię i nazwisko:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email" id="email-label">E-mail:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message" id="message-label">Wiadomość:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                <button type="submit">Wyślij</button>
+            </form>
+        </div>
     </section>
     <footer>
         <p>&copy; 2025 Honda Goldwing Trike 1800. Wszystkie prawa zastrzeżone. <a href="#">Polityka prywatności</a></p>
     </footer>
+
+    <script>
+        let currentLanguage = 'pl';
+
+        const texts = {
+            pl: {
+                "header-title": "Honda Goldwing Trike 1800",
+                "nav-about": "O nas",
+                "nav-specs": "Specyfikacja",
+                "nav-gallery": "Galeria",
+                "nav-contact": "Kontakt",
+                "about-title": "O nas",
+                "about-text": "Oferujemy najwyższej jakości trójkołowce, które łączą nowoczesną technologię, niezrównany komfort i wyjątkowy styl.",
+                "specs-title": "Specyfikacja Techniczna",
+                "specs-list": [
+                    "Silnik: 1800cc",
+                    "Moc: 124 KM",
+                    "Pojemność zbiornika: 21 litrów",
+                    "Zaawansowane systemy bezpieczeństwa"
+                ],
+                "gallery-title": "Galeria",
+                "contact-title": "Kontakt",
+                "name-label": "Imię i nazwisko:",
+                "email-label": "E-mail:",
+                "message-label": "Wiadomość:"
+            },
+            en: {
+                "header-title": "Honda Goldwing Trike 1800",
+                "nav-about": "About Us",
+                "nav-specs": "Specifications",
+                "nav-gallery": "Gallery",
+                "nav-contact": "Contact",
+                "about-title": "About Us",
+                "about-text": "We offer top-quality trikes that combine modern technology, unmatched comfort, and exceptional style.",
+                "specs-title": "Technical Specifications",
+                "specs-list": [
+                    "Engine: 1800cc",
+                    "Power: 124 hp",
+                    "Fuel tank capacity: 21 liters",
+                    "Advanced safety systems"
+                ],
+                "gallery-title": "Gallery",
+                "contact-title": "Contact",
+                "name-label": "Full Name:",
+                "email-label": "E-mail:",
+                "message-label": "Message:"
+            }
+        };
+
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            updateText();
+        }
+
+        function updateText() {
+            document.getElementById('header-title').textContent = texts[currentLanguage]['header-title'];
+            document.getElementById('nav-about').textContent = texts[currentLanguage]['nav-about'];
+            document.getElementById('nav-specs').textContent = texts[currentLanguage]['nav-specs'];
+            document.getElementById('nav-gallery').textContent = texts[currentLanguage]['nav-gallery'];
+            document.getElementById('nav-contact').textContent = texts[currentLanguage]['nav-contact'];
+            document.getElementById('about-title').textContent = texts[currentLanguage]['about-title'];
+            document.getElementById('about-text').textContent = texts[currentLanguage]['about-text'];
+            document.getElementById('specs-title').textContent = texts[currentLanguage]['specs-title'];
+            const specsList = document.getElementById('specs-list');
+            specsList.innerHTML = '';
+            texts[currentLanguage]['specs-list'].forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                specsList.appendChild(li);
+            });
+            document.getElementById('gallery-title').textContent = texts[currentLanguage]['gallery-title'];
+            document.getElementById('contact-title').textContent = texts[currentLanguage]['contact-title'];
+            document.getElementById('name-label').textContent = texts[currentLanguage]['name-label'];
+            document.getElementById('email-label').textContent = texts[currentLanguage]['email-label'];
+            document.getElementById('message-label').textContent = texts[currentLanguage]['message-label'];
+        }
+    </script>
 </body>
 </html>
